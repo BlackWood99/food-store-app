@@ -1,0 +1,25 @@
+@import 'libs/variables';
+@import 'components/Header';
+@import 'components/FoodNavbar';
+
+@import 'components/Main/Main.scss';
+@import 'components/Catalog/Catalog.scss';
+@import 'components/FoodPage/FoodPage.scss';
+
+@import 'components/Footer.scss';
+
+
+.App {
+    background-color: $grey;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: $container_w;
+
+    margin: 0 auto;
+    padding: 0 20px;
+
+    background-color: #fff;
+}

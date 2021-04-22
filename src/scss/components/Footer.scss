@@ -1,0 +1,54 @@
+@import "../libs/variables";
+
+footer {
+	background-color: $tomate_color;
+
+	.footer_wrapper {
+		color: #fff;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 3rem 0;
+		margin: 0 auto;
+		width: 100%;
+		max-width: $container_w;
+
+		&_contacts {
+			margin-right: 1rem;
+			h3 {
+				font-size: 1.5rem;
+				margin-bottom: 2rem;
+			}
+		}
+		&_links {
+			width: 45%;
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				li {
+					margin-right: 2rem;
+					a {
+						color: #fff;
+						line-height: 1.6rem;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+		&_social {
+			ul {
+				display: flex;
+
+				li {
+					a {
+						font-size: 3rem;
+						color: #fff;
+                        background-color: $tomate_color;
+                        border: 1px dashed #fff;
+                        border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,28 @@
+
+.slider {
+    height: 27rem;
+    margin: 1rem 0;
+    padding: 1rem 0;
+    &_item {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: url('../../../assets/images/slider/slide1.jpg') no-repeat;
+        background-size: cover;
+        &.slide2 {
+            background-image: url('../../../assets/images/slider/slide2.jpg');
+        }
+        &.slide3 {
+            background-image: url('../../../assets/images/slider/slide3.jpg');
+        }
+        &__text {
+            background-color: rgba(17, 17, 17, 0.787);
+            padding: 3rem 5rem;
+            h3 {
+                color: #fff;
+                font-size: 2rem;
+            }
+        }
+    }
+}

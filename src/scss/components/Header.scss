@@ -1,0 +1,46 @@
+@import '../libs/variables';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $grey;
+    padding: 1.5rem 0;
+    &_logo {
+        a {
+            color: $tomate_color;
+            font-family: "Lobster";
+            font-size: 40px;
+        }
+    }
+    &_nav {
+        &__link {
+            font-size: 1.1rem;
+            margin-right: 1rem;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    &_contacts {
+        h4 {
+            color: $tomate_color;
+            font-size: 1.1rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &_cart {
+        cursor: pointer;
+        i {
+            font-size: 1.8rem;
+            color: #fff;
+            padding: 0.6rem;
+            border-radius: 50%;
+            background-color: $tomate_color;
+        }
+    }
+}

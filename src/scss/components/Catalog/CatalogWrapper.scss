@@ -1,0 +1,45 @@
+@import '../../libs/variables';
+
+.catalog_wrapper {
+    padding: 1rem 0;
+    .catalog_sorting {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        &_list {
+            display: flex;
+            flex-wrap: wrap;
+
+            .btn-sort-item {
+                background-color: $grey;
+                border: none;
+                padding: 0.8rem;
+                margin-right: 0.8rem;
+            }
+        }
+
+        .select_sort {
+            width: 10rem;
+        }
+    }
+
+    .catalog_list {
+        display: flex;
+        justify-items: start;
+        flex-wrap: wrap; 
+    }
+
+    .paginator_pages {
+        display: flex;
+
+        .btn-page {
+            color: $tomate_color;
+            background-color: #fff;
+            border: 1px solid $grey;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 0.3rem;
+            cursor: pointer;
+        }
+    }
+}

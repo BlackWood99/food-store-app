@@ -1,0 +1,8 @@
+export const LOADING_START = "APP/LOADING_START"
+export const LOADING_FINISH = "APP/LOADING_FINISH"
+
+
+export const GET_FOOD = "FOOD/GET_FOOD"
+
+
+export const GET_REVIEWS = "REVIEWS/GET_REVIEWS"

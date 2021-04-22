@@ -1,0 +1,15 @@
+.imageText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+
+    img {
+        max-width: 37%;
+        margin-right: 2rem;
+    }
+    p {
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+    }
+}
