@@ -10,8 +10,7 @@ import { Provider } from "react-redux"
 import { BrowserRouter } from "react-router-dom"
 
 const store = createStore(rootReducer, compose(
-  applyMiddleware(thunk),
-  (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(thunk)
 ))
 
 ReactDOM.render(
