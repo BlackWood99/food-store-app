@@ -27,7 +27,7 @@ interface IDispatch {
 export const getFood = () => async (dispatch: Dispatch<any>) => {
     try {
         dispatch(loadingStartAC())
-        const response = await axios.get('http://localhost:3004/food')
+        const response = await axios.get('/food')
         if (response.status === 200) dispatch({
             type: GET_FOOD,
             payload: response.data
@@ -42,7 +42,7 @@ export const getFood = () => async (dispatch: Dispatch<any>) => {
 
 export const getCart = () => async (dispatch: any) => {
     try {
-        const response = await axios.get('http://localhost:3004/cart')
+        const response = await axios.get('/cart')
         if (response.status === 200) dispatch({
             type: GET_CART,
             payload: response.data
@@ -54,7 +54,7 @@ export const getCart = () => async (dispatch: any) => {
 
 export const addCartItem = (cartItem: ICart) => (dispatch: any) => {
     try {
-        axios.post('http://localhost:3004/cart', cartItem)
+        axios.post('/cart', cartItem)
             .then(response => {
                 dispatch({
                     type: ADD_CART_ITEM,
@@ -89,7 +89,7 @@ export const changeCount = (cartItem: ICart) => {
 
 export const deleteCartItem = (cartItem: ICart) => async (dispatch: any) => {
     try {
-        axios.delete(`http://localhost:3004/cart/${cartItem.id}`)
+        axios.delete(`/cart/${cartItem.id}`)
             .then(() => {
                 dispatch({
                     type: DELETE_CART_ITEM,
@@ -106,7 +106,7 @@ export const deleteCartItem = (cartItem: ICart) => async (dispatch: any) => {
 export const getReviews = () => async (dispatch: any) => {
     try {
         dispatch(loadingStartAC())
-        const response = await axios.get('http://localhost:3004/reviews')
+        const response = await axios.get('/reviews')
         if (response.status === 200) dispatch({
             type: GET_REVIEWS,
             payload: response.data
