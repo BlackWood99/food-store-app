@@ -29,7 +29,7 @@
 				width: 25rem;
 				position: relative;
 				img {
-					min-width: 17rem;
+					//min-width: 17rem;
 					width: 100%;
 				}
 				&_discount {
@@ -49,6 +49,7 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		width: 100%;
 
 		&_name {
 			font-size: 2rem;
@@ -81,9 +82,10 @@
 				font-size: 1.6rem;
 			}
 		}
-		&_buyBlock {
+		.buyBlock {
 			display: flex;
 			align-items: center;
+			width: 16rem;
 
 			.btn {
 				min-width: 2.5rem;
@@ -110,13 +112,18 @@
 			&_right {
 				.btn-cart {
 					background-color: $tomate_color;
-					display: flex;
-					align-items: center;
 					span {
 						color: #fff;
 						font-size: 1rem;
 						font-size: 1.2rem;
 					}
+				}
+				.foodpage_counter {
+					display: flex;
+					align-items: center;
+				}
+				.foodItem {
+					display: none;
 				}
 			}
 		}
@@ -148,6 +155,61 @@
 		}
 		&_body {
 			margin-top: 1rem;
+		}
+	}
+
+	@media (max-width: 970px) {
+		
+		.img {
+
+			&_main {
+				width: 75%;
+			}
+		}
+	}
+	@media (max-width: 970px) {
+		&_preview {
+			flex-direction: column;
+		}
+		.img {
+			width: 100%;
+			margin-bottom: 1rem;
+			&_main {
+				width: 60%;
+			}
+		}
+	}
+	@media (max-width: 520px) {
+		
+		.img {
+			flex-direction: column;
+			&_list {
+				flex-direction: row;
+				justify-content: space-between;
+				order: 2;
+				margin-right: 0;
+				img {
+					width: 33%;
+					height: 50%;
+				}
+			}
+			&_main {
+				width: 100%;
+			}
+		}
+	}
+	@media (max-width: 430px) {
+		
+		.img {
+			&_list {
+				img {
+					min-width: 15%;
+					//height: 10%;
+				}
+			}
+			&_main {
+				width: 100%;
+			}
 		}
 	}
 }

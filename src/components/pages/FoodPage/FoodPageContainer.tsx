@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { uid } from "react-uid"
 import img from "../../../assets/images/food/category/gamb.jpg"
 import { IFood, IFoodStateConnect } from "../../../interfaces"
+import { Counter } from "../../utils/Counter/Counter"
 
 interface IFoodPageProps {
 	food: [] | IFood[]
@@ -19,7 +20,7 @@ function FoodPageContainer(props: IFoodPageProps) {
 	const currFood = props.food.find((food) => food.id == id)
 
 	/////
-	if (currFood == undefined) return <h1>Unknown food</h1>
+	if (currFood === undefined) return <h1>Unknown food</h1>
 	/////
 	let priceWithDiscount = 0
 	if (currFood?.discount) {
@@ -78,19 +79,8 @@ function FoodPageContainer(props: IFoodPageProps) {
 						)}
 						<div className='main' style={currFood.discount ? {textDecoration: "line-through"} : undefined}>{currFood.price},00 руб</div>
 					</div>
-					<div className='info_buyBlock'>
-						<div className='info_buyBlock_left'>
-							<button className='btn btn-operator minus'>-</button>
-							<input className='count' type='text' value={1} readOnly />
-							<button className='btn btn-operator plus'>+</button>
-						</div>
-						<div className='info_buyBlock_right'>
-							<button className='btn btn-cart'>
-								<span className='material-icons'>shopping_cart</span>
-								<span>Купить</span>
-							</button>
-						</div>
-					</div>
+					
+					<Counter foodItem={currFood}/>
 				</div>
 			</div>
 			<div className='characteristic'>

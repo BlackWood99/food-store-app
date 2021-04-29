@@ -6,11 +6,13 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid $grey;
+    flex-wrap: wrap;
 
     &_item {
         width: 10rem;
         padding: 0.5rem;
         margin-right: 1rem;
+        margin-bottom: 1rem;
         border: 1px solid $grey;
 
         .img_block {
@@ -42,4 +44,14 @@
         }
     }
 
+    @media (max-width: 435px) {
+        &_item {
+            width: 8.5rem;
+        }
+    }
+    @media (max-width: 385px) {
+        &_item {
+            width: 100%;
+        }
+    }
 }

@@ -8,4 +8,12 @@
         text-transform: uppercase;
         margin-right: 1rem;
     }
+
+    @media (max-width: 375px) {
+        display: flex;
+        flex-wrap: wrap;
+        a {
+            margin-bottom: 0.3rem;
+        }
+    }
 }

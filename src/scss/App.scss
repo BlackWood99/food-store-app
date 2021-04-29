@@ -5,21 +5,60 @@
 @import 'components/Main/Main.scss';
 @import 'components/Catalog/Catalog.scss';
 @import 'components/FoodPage/FoodPage.scss';
+@import 'components/Cart/Cart.scss';
 
 @import 'components/Footer.scss';
+
+@import 'utils/Counter.scss';
 
 
 .App {
     background-color: $grey;
+    min-height: 100vh;
+    height: 100%;
+    
+    overflow: hidden;
+}
+
+.content {
+    background-color: #fff;
+    padding: 0 20px;
+    min-height: calc(100vh - 168px);
+    height: 100%;
 }
 
 .container {
-    height: 100%;
-    width: 100%;
     max-width: $container_w;
 
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0;
+}
 
-    background-color: #fff;
+
+
+.aboutPage, .contactsPage, .deliveryPage, .paymentPage {
+    padding: 1rem 0;
+    h2 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+    p {
+        margin-bottom: 1rem;
+        line-height: 1.3rem;
+    }
+    ul {
+        list-style-type: disc;
+        li {
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        &.list_workDays {
+            li {
+                margin-bottom: 0.4rem;
+            }
+        }
+    }
+    
 }

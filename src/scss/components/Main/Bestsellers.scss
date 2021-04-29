@@ -2,28 +2,28 @@
 
 .bestSeller {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 2rem 0;
+    flex-wrap: wrap;
 
     &_item {
         display: flex;
+        flex: 1 1 auto;
+        align-self: stretch;
+
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-        margin-right: 1rem;
+
+        margin: 0 1rem;
         margin-bottom: 1rem;
         padding: 1rem;
         border: 2px solid $grey;
         height: 32rem;
-        width: 20%;
-        &:last-child {
-            margin-right: 0;
-        }
+        width: 19%;
+        max-width: 19%;
         .top {
             .img {
                 position: relative;
-                height: 15rem;
                 margin-bottom: 0.5rem;
                 a {
                     img {
@@ -37,17 +37,17 @@
 					color: #fff;
 					font-size: 1rem;
 					position: absolute;
-					right: 0.5rem;
-					top: 0.5rem;
+					right: -0.5rem;
+					top: -0.5rem;
                 }
             }
             a {
                 color: $tomate_color;
                 font-size: 1.3rem;
+                margin-bottom: 1rem;
             }
         }
         .center {
-            
             p {
                 line-height: 1.2rem;
 
@@ -64,71 +64,60 @@
                 color: #dd3f46;
                 margin-bottom: 0.6rem;
             }
-            .buyBlock {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .btn {
-                    min-width: 2.2rem;
-                    min-height: 2.2rem;
-                    border: none;
-                }
-                &_left {
-                    display: flex;
-                    width: 60%;
-
-                    .btn-operator {
-                        font-size: 1.4rem;
-                        background-color: #cccccc;
-                    }
-                    .count {
-                        width: 5rem;
-                        text-align: center;
-                        border: none;
-                        font-size: 1.4rem;
-                        background-color: #fafafa;
-                    }
-                }
-                &_right {
-
-                    .btn-cart {
-                        background-color: $tomate_color;
-                        color: #fff;
-                    }
-                }
-            }
+            
         }
     }
 
+    @media (max-width: 1180px) {
+        &_item {
+            width: 26%;
+            max-width: 26%;
+        }
+    }
+    @media (max-width: 1020px) {
+
+        &_item {
+            max-width: 26%;
+        }
+    }
     @media (max-width: 980px) {
-        
-        flex-wrap: wrap;
 
         &_item {
-            //width: 35%;
-            margin-bottom: 1rem;
-            margin-right: 0;
+            max-width: 24%;
         }
     }
-    @media (max-width: 810px) {
-        
-        flex-wrap: wrap;
+    @media (max-width: 770px) {
 
         &_item {
-            width: 43%;
-            height: 35rem;
-            margin-bottom: 1rem;
+            max-width: 40%;
+        }
+    }
+    @media (max-width: 720px) {
 
-            &:last-child {
-                margin-right: 1.5rem;
-            }
-            &:nth-child(even) {
-                margin-right: 0;
-            }
-            .top > .img {
-                height: 100%;
-            }
+        &_item {
+            max-width: 39%;
+        }
+    }
+    @media (max-width: 630px) {
+
+        &_item {
+            height: 29rem;
+        }
+    }
+    @media (max-width: 460px) {
+
+        &_item {
+            width: 100%;
+            max-width: 100%;
+            height: 35rem;
+        }
+    }
+    @media (max-width: 420px) {
+
+        &_item {
+            width: 100%;
+            max-width: 100%;
+            height: 32rem;
         }
     }
 }

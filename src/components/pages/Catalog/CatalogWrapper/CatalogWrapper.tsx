@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react"
 import Select from "react-select"
 import { uid } from "react-uid"
 import { IFood } from "../../../../interfaces"
@@ -11,23 +10,22 @@ const options = [
 ]
 
 interface CatalogWrapperProps {
-	typeFoodList: [] | IFood[]
 	selectedOption: any
 	handleChange(selectedOption: any): void
-
-	/* currentPage: number
+	
+	currentPage: number
 	foodsPerPage: number
-	onClickPage(event: any):void */
+	onClickPage(event: any):void
+	foodLength: number
 
-	/* allFoodList: [] | IFood[]
-	currentFoods: [] | IFood[] */
+	currentFoods: [] | IFood[]
 }
 
 function CatalogWrapper(props: CatalogWrapperProps) {
 
-	/* const pageNumbers = [];
-    for (let i = 1; i <= Math.ceil(props.typeFoodList.length / props.foodsPerPage); i++) {
-      pageNumbers.push(i);
+	const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(props.foodLength / props.foodsPerPage); i++) {
+      pageNumbers.push(i)
     }
 
     const renderPageNumbers = pageNumbers.map((number: any) => {
@@ -40,19 +38,12 @@ function CatalogWrapper(props: CatalogWrapperProps) {
         >
           {number}
         </button>
-      );
-    }); */
-
+      )
+    })
 
 	return (
 		<div className='catalog_wrapper'>
 			<div className='catalog_sorting'>
-				<div className='catalog_sorting_list'>
-					<button className='btn btn-sort-item'>Размер</button>
-					<button className='btn btn-sort-item'>Начинка</button>
-					<button className='btn btn-sort-item'>Котлета</button>
-					<button className='btn btn-sort-item'>Бифштекс</button>
-				</div>
 
 				<Select
 					className='select_sort'
@@ -63,21 +54,16 @@ function CatalogWrapper(props: CatalogWrapperProps) {
 
 			</div>
 			<div className='catalog_list'>
-				{props.typeFoodList.map((food: IFood) => {
-					return <BestSellersItem food={food} key={uid(food)} />
-				})}
+				{
+					props.currentFoods.map((food: IFood) => {
+						return <BestSellersItem food={food} key={uid(food)} />
+					})
+				}
 			</div>
 			<div className='paginator_pages'>
-				<button 
-					className='btn-page'
-					id={"123"}
-				>
-					1
-				</button>
-				{/* <button className='btn-page material-icons'>chevron_left</button>
-				<button className='btn-page'>1</button>
-				<button className='btn-page'>2</button>
-				<button className='btn-page'>3</button> */}
+
+				{ renderPageNumbers }
+
 			</div>
 		</div>
 	)

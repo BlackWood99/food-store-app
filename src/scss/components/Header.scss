@@ -7,11 +7,18 @@
     border-bottom: 1px solid $grey;
     padding: 1.5rem 0;
     &_logo {
+        width: 15rem;
         a {
             color: $tomate_color;
             font-family: "Lobster";
             font-size: 40px;
         }
+    }
+    &_right {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
     &_nav {
         &__link {
@@ -35,6 +42,7 @@
     }
     &_cart {
         cursor: pointer;
+        position: relative;
         i {
             font-size: 1.8rem;
             color: #fff;
@@ -42,5 +50,81 @@
             border-radius: 50%;
             background-color: $tomate_color;
         }
+        .cart_length {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background-color: #c7c7c7;
+            bottom: -0.1rem;
+            left: -0.1rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.05rem;
+        }
+    }
+
+    @media (max-width: 890px) {
+        flex-direction: column;
+        &_right {
+            width: 85%;
+        }
+        &_logo {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    }
+    @media (max-width: 730px) {
+        flex-direction: column;
+        &_right {
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &_logo {
+            margin-bottom: 2rem;
+        }
+    }
+    @media (max-width: 630px) {
+        flex-direction: column;
+        &_right {
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        &_nav {
+            width: 100%;
+            margin-top: 1.5rem;
+            order: 2;
+        }
+        &_logo {
+            margin-bottom: 2rem;
+        }
+    }
+    @media (max-width: 415px) {
+
+        &_nav {
+            display: flex;
+            flex-wrap: wrap;
+            &__link {
+                margin-bottom: 0.4rem;
+            }
+        }
+        //flex-direction: column;
+        // &_right {
+        //     width: 100%;
+        //     justify-content: space-between;
+        //     flex-wrap: wrap;
+        // }
+        // &_nav {
+        //     width: 100%;
+        //     margin-top: 1.5rem;
+        //     order: 2;
+        // }
+        // &_logo {
+        //     margin-bottom: 2rem;
+        // }
     }
 }

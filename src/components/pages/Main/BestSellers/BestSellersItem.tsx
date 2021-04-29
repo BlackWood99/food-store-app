@@ -1,6 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { IFood } from "../../../../interfaces"
+import { Counter } from "../../../utils/Counter/Counter"
 
 interface IBestSellersItemProps {
 	food: IFood
@@ -31,18 +32,7 @@ function BestSellersItem(props: IBestSellersItemProps) {
 			</div>
 			<div className='bot'>
 				<h3 className='price'>{bestSell.price}</h3>
-				<div className='buyBlock'>
-					<div className='buyBlock_left'>
-						<button className='btn btn-operator minus'>-</button>
-						<input className='count' type='text' value={1} readOnly />
-						<button className='btn btn-operator plus'>+</button>
-					</div>
-					<div className='buyBlock_right'>
-						<button className='btn btn-cart material-icons'>
-							shopping_cart
-						</button>
-					</div>
-				</div>
+				<Counter foodItem={bestSell}/>
 			</div>
 		</div>
 	)
