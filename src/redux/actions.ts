@@ -1,4 +1,6 @@
 import axios from "axios"
+import { Dispatch } from "react"
+import { ICart } from "../interfaces"
 import { GET_CART, ADD_CART_ITEM, DELETE_CART_ITEM, GET_FOOD, GET_REVIEWS, LOADING_FINISH, LOADING_START, CHANGE_CART_ITEM } from "./constans"
 
 
@@ -15,8 +17,14 @@ export const loadingFinishAC = () => {
 }
 
 //// FOOD
+interface IDispatch {
+    Dispatch: {
 
-export const getFood = () => async (dispatch: any) => {
+    }
+}
+
+
+export const getFood = () => async (dispatch: Dispatch<any>) => {
     try {
         dispatch(loadingStartAC())
         const response = await axios.get('http://localhost:3004/food')
@@ -44,7 +52,7 @@ export const getCart = () => async (dispatch: any) => {
     }
 }
 
-export const addCartItem = (cartItem: any) => (dispatch: any) => {
+export const addCartItem = (cartItem: ICart) => (dispatch: any) => {
     try {
         axios.post('http://localhost:3004/cart', cartItem)
             .then(response => {
@@ -58,7 +66,7 @@ export const addCartItem = (cartItem: any) => (dispatch: any) => {
     }
 }
 
-export const changeCount = (cartItem: any) => (dispatch: any) => {
+/* export const changeCount = (cartItem: any) => (dispatch: any) => {
     try {
         axios.put(`http://localhost:3004/cart/${cartItem.id}`, cartItem)
             .then(response => {
@@ -70,12 +78,19 @@ export const changeCount = (cartItem: any) => (dispatch: any) => {
     } catch (error) {
         console.log('Произошла ошибка при запросе корзины: ' + error)
     }
+} */
+
+export const changeCount = (cartItem: ICart) => {
+    return {
+        type: CHANGE_CART_ITEM,
+        payload: cartItem
+    }
 }
 
-export const deleteCartItem = (cartItem: any) => async (dispatch: any) => {
+export const deleteCartItem = (cartItem: ICart) => async (dispatch: any) => {
     try {
         axios.delete(`http://localhost:3004/cart/${cartItem.id}`)
-            .then(response => {
+            .then(() => {
                 dispatch({
                     type: DELETE_CART_ITEM,
                     payload: cartItem

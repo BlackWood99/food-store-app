@@ -1,9 +1,10 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
+import { ICartStateConnect } from "../../interfaces"
 
 function Header() {
-	const cart = useSelector((state: any) => state.cartPage.cart)
+	const cart = useSelector((state: ICartStateConnect) => state.cartPage.cart)
 
 	return (
 		<header className="header">

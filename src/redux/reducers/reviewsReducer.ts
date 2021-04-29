@@ -1,8 +1,8 @@
 import { GET_REVIEWS } from '../constans';
-import { reviewsActionType } from './../../interfaces';
+import { IReview, reviewsActionType } from './../../interfaces';
 
 interface IReviewsState {
-    reviews: [] | any[]
+    reviews: [] | IReview[]
 }
 
 const initialState: IReviewsState = {

@@ -28,7 +28,7 @@ function App() {
 	useEffect(() => {
 		dispatch(getFood())
 		dispatch(getReviews())
-	}, [])
+	}, [dispatch])
 
 	const loading = useSelector<IRootState, boolean>(
 		(state) => state.appPage.loading
@@ -37,9 +37,9 @@ function App() {
 	if (loading) return <Preloader />
 
 	return (
-		<div className='App'>
-			<main className='content-wrapper'>
-				<div className='container'>
+		<div className="App">
+			<main className="content-wrapper">
+				<div className="container">
 					<div className="content">
 						<Header />
 						<FoodNavBar />

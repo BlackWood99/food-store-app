@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import { useDispatch } from "react-redux"
+import { ICart } from "../../../interfaces"
 import { changeCount, deleteCartItem } from "../../../redux/actions"
 
 interface ICartProps {
-	cartItem: any
+	cartItem: ICart
 }
 
 export const Cart: React.FC<ICartProps> = ({ cartItem }) => {

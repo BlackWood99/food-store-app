@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { connect } from "react-redux"
 import { IFood, IFoodStateConnect } from "../../../interfaces"
 import CatalogCategory from "./CatalogCategory/CatalogCategory"
@@ -16,9 +16,9 @@ function CatalogContainer(props: ICatalogProps) {
 	const [activeType, setActiveType] = useState(props.match.params.type)
 	const [selectedOption, setSelectedOption] = useState('name')
 	const [foodLength, setFoodLength] = useState(foodList.length)
-	const [currentFoods, setCurrentFoods] = useState<any[]>(foodList)
+	const [currentFoods, setCurrentFoods] = useState<[] | IFood[]>(foodList)
 	const [currentPage, setCurrentPage] = useState(1)
-	const [foodsPerPage, setFoodsPerPage] = useState(12)
+	const foodsPerPage = 12
 
 	const handleClick = (event: any) => {
 		setCurrentPage(Number(event.target.id))
@@ -32,6 +32,10 @@ function CatalogContainer(props: ICatalogProps) {
 		setActiveType(props.match.params.type)
 		setCurrentPage(1)
 	}, [props.match])
+
+	useEffect(() => {
+		setFoodList(props.food)
+	}, [props.food])
 
 	useEffect(() => {
 
@@ -102,7 +106,7 @@ function CatalogContainer(props: ICatalogProps) {
 			return [...newFoods.slice(indexOfFirstTodo, indexOfLastTodo)]
 		})
 		
-	}, [activeType, selectedOption, currentPage])
+	}, [activeType, selectedOption, currentPage, foodList])
 
 	return (
 		<div className='catalog'>

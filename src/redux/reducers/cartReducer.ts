@@ -1,3 +1,4 @@
+import { cartActionType } from "../../interfaces";
 import { GET_CART, ADD_CART_ITEM, DELETE_CART_ITEM, CHANGE_CART_ITEM } from "../constans";
 
 const cartInitialState = {
@@ -11,7 +12,7 @@ const cartInitialState = {
     ]
 }
 
-const cartReducer = (state = cartInitialState, action: any) => {
+const cartReducer = (state = cartInitialState, action: cartActionType) => {
     switch (action.type) {
         case GET_CART:
             return {
@@ -24,7 +25,7 @@ const cartReducer = (state = cartInitialState, action: any) => {
         case CHANGE_CART_ITEM:
             return {
                 cart: state.cart.map(cartItem => {
-                    if (action.payload.id == cartItem.id) {
+                    if (action.payload.id === cartItem.id) {
                         return action.payload
                     } else return cartItem                    
                 })
