@@ -3,7 +3,6 @@ import { Dispatch } from "react"
 import { ICart } from "../interfaces"
 import { GET_CART, ADD_CART_ITEM, DELETE_CART_ITEM, GET_FOOD, GET_REVIEWS, LOADING_FINISH, LOADING_START, CHANGE_CART_ITEM } from "./constans"
 
-
 export const loadingStartAC = () => {
     return {
         type: LOADING_START
@@ -17,12 +16,6 @@ export const loadingFinishAC = () => {
 }
 
 //// FOOD
-interface IDispatch {
-    Dispatch: {
-
-    }
-}
-
 
 export const getFood = () => async (dispatch: Dispatch<any>) => {
     try {
@@ -62,7 +55,7 @@ export const addCartItem = (cartItem: ICart) => (dispatch: any) => {
                 })
             })
     } catch (error) {
-        console.log('Произошла ошибка при запросе корзины: ' + error)
+        console.log('Произошла ошибка при добавлении: ' + error)
     }
 }
 
@@ -97,7 +90,7 @@ export const deleteCartItem = (cartItem: ICart) => async (dispatch: any) => {
                 })
             })
     } catch (error) {
-        console.log('Произошла ошибка при запросе корзины: ' + error)
+        console.log('Произошла ошибка при удалении: ' + error)
     }
 }
 

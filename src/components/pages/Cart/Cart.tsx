@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
+import { NavLink } from "react-router-dom"
 import { ICart } from "../../../interfaces"
 import { changeCount, deleteCartItem } from "../../../redux/actions"
 
@@ -53,7 +54,7 @@ export const Cart: React.FC<ICartProps> = ({ cartItem }) => {
 			</div>
 			<div className="cart_item_center">
 				<div className='name'>
-					<h3>{cartItem.foodItem.name}</h3>
+					<NavLink to={`food/${cartItem.foodItem.id}`}><h3>{cartItem.foodItem.name}</h3></NavLink>
 				</div>
 				<div className='price'>
 					<h3>{cartItem.foodItem.price} руб</h3>

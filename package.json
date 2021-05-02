@@ -37,7 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "server": "node server.js",
-    "json-server": "json-server --watch src/data/db.json --port=3004"
+    "json-server": "json-server --watch src/data/db.json --port=3004",
+    "start-app": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [

@@ -1,8 +1,7 @@
 
 .slider {
     height: 27rem;
-    margin: 1rem 0;
-    padding: 1rem 0;
+    margin: 2rem 0;
     &_item {
         height: 100%;
         display: flex;
@@ -24,5 +23,19 @@
                 font-size: 2rem;
             }
         }
+    }
+
+    @media (max-width: 600px) {
+        height: 15rem;
+        &_item {
+
+            &__text {
+                padding: 1rem 3rem;
+                h3 {font-size: 1.5rem;}
+            }
+        }
+    }
+    @media (max-width: 400px) {
+        display: none;
     }
 }

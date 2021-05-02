@@ -9,14 +9,12 @@
 	.reviews_list {
 		display: flex;
 		justify-content: space-around;
-		align-items: center;
 
 		&_item {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 			width: 28%;
-			height: 15rem;
 
 			img {
 				width: 6rem;
@@ -26,8 +24,6 @@
 			div {
 				display: flex;
 				flex-direction: column;
-				justify-content: space-between;
-				align-items: center;
 				h3 {
 					font-weight: bold;
 					text-align: center;
@@ -40,4 +36,17 @@
 			}
 		}
 	}
+
+	@media (max-width: 400px) {
+		
+		.reviews_list {
+			flex-direction: column;
+
+			&_item {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+		}
+	}
+
 }

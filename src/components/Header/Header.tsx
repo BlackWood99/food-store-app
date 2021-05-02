@@ -24,7 +24,7 @@ function Header() {
 	                <h4>qwerty@mail.ru</h4>
 	            </div>
 	            <div className="header_cart">
-					<NavLink to="/cart"><i className="material-icons">shopping_cart</i></NavLink>
+					<NavLink to="/basket"><i className="material-icons">shopping_cart</i></NavLink>
 					<span className="cart_length">{cart.length}</span>
 				</div>
 			</div>

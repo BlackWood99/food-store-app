@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
 
-    //padding: 1rem 0;
+    margin-top: 1rem;
     &_item {
         display: flex;
         align-items: center;
@@ -13,6 +13,18 @@
             font-size: 5rem;
             color: rgba(0, 0, 0, 0.5);
             margin-right: 1rem;
+        }
+    }
+
+    @media (max-width: 530px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        &_item {
+            font-size: 0.9rem;
+            i {
+                font-size: 3rem;
+            }
         }
     }
 }

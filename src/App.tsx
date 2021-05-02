@@ -52,7 +52,7 @@ function App() {
 								exact
 							/>
 							<Route path='/food/:id' component={FoodPageContainer} exact />
-							<Route path='/cart' component={CartContainer} exact />
+							<Route path='/basket' component={CartContainer} exact />
 							<Route path='/about' component={About} exact />
 							<Route path='/contacts' component={Contacts} exact />
 							<Route path='/delivery' component={Delivery} exact />
