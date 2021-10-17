@@ -50,6 +50,7 @@ function CatalogWrapper(props: CatalogWrapperProps) {
 					value={props.selectedOption}
 					onChange={props.handleChange}
 					options={options}
+					placeholder="Сортировка"
 				/>
 
 			</div>

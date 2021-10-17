@@ -8,7 +8,7 @@ import CatalogContainer from "./components/pages/Catalog/CatalogContainer"
 import FoodPageContainer from "./components/pages/FoodPage/FoodPageContainer"
 import { useDispatch, useSelector } from "react-redux"
 import { useEffect } from "react"
-import { getFood, getReviews } from "./redux/actions"
+import { getFood, getReviews, getCart } from "./redux/actions"
 import { Preloader } from "./components/utils/Preloader/Preloader"
 import { CartContainer } from "./components/pages/Cart/CartContainer"
 import { About } from "./components/pages/About/About"
@@ -28,6 +28,7 @@ function App() {
 	useEffect(() => {
 		dispatch(getFood())
 		dispatch(getReviews())
+		dispatch(getCart())
 	}, [dispatch])
 
 	const loading = useSelector<IRootState, boolean>(
